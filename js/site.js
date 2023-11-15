@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupDraggableButton(buttonId, dragRight) {
     const dragItem = document.getElementById(buttonId);
+    
     const container = document.querySelector('.container');
     const textContainer = dragItem.nextElementSibling;
     let isDragging = false;
@@ -29,7 +30,7 @@ function setupDraggableButton(buttonId, dragRight) {
 
     window.addEventListener('resize', updateBoundaries);
     updateBoundaries();
-
+   
     dragItem.addEventListener('mousedown', function(e) {
         isDragging = true;
         startX = e.pageX;
@@ -39,6 +40,7 @@ function setupDraggableButton(buttonId, dragRight) {
     });
 
     document.addEventListener('mousemove', function(e) {
+        
         if (isDragging) {
             let currentX = e.pageX;
             let translateX = currentX - startX;
@@ -61,3 +63,5 @@ function setupDraggableButton(buttonId, dragRight) {
         }
     });
 }
+
+console.log(document.getElementById('hello-world'))
